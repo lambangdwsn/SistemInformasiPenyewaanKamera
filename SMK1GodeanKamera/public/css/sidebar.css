@@ -1,0 +1,117 @@
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #11101D;
+    overflow: auto;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 25px;
+    padding-bottom: 2em !important;
+  }
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+  .dropdown-container {
+    height: 0;
+    transform: scaleY(0);    
+    transform-origin: top;
+    background-color: #1D1B31;
+    padding-left: 5px;
+  }
+
+  
+@keyframes drob_show {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes drob_hide {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+  
+  .sidebar a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  .sidebar i{
+    margin: 0px 15px 0px 0px;
+  }
+  .sidebar a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+  }
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+    -webkit-transition: -webkit-transform .4s ease-in-out;
+    -ms-transition: -ms-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out;
+    transform-origin: 30% 50%;
+  }
+  
+  .active {
+    background-color: green;
+    color: white;
+  }
+  .sidebar .active .fa-caret-down{
+    transform:rotate(-180deg);
+    -ms-transform:rotate(-180deg);
+    -webkit-transform:rotate(-180deg);
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .btn-side {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    border: none;
+    height: fit-content;
+    width: fit-content;
+  }
+  
+  .btn-side:hover {
+    background-color: #444;
+  }
+  
+  
+  #main, #headbar {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
