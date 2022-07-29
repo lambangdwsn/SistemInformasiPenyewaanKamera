@@ -135,7 +135,7 @@ class PenyewaanController extends Controller
 			->where('id_barang',$id_barang)
 			->where('status_acc','proses-sewa')->pluck('total')->first();
 			
-			if(($jumlah_proses + $jumlah) <= ((int) $jumlah_barang - (int) $barang_disewa)){
+			if(($jumlah_proses + $request->jumlah) <= ((int) $jumlah_barang - (int) $barang_disewa)){
 				$sewa[0]->update(['jumlah' => $jumlah]);
 			}else{
 				return response()->json(['errors' => ['jumlah' => 'Jumlah is not enough']]);
