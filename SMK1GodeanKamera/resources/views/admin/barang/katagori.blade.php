@@ -46,7 +46,7 @@
             <input type="number" name="harga_umum" class="form-control" placeholder="Harga Sewa Umum" required>
           </div>
           @foreach($katagori as $option)
-                @if($option->katagori === ucfirst($selector))
+                @if(strtolower($option->katagori)  === strtolower($selector))
                 <input type="hidden" name="katagori" value="{{$option->id}}">
                 @break
                 @endif
