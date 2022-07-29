@@ -149,7 +149,8 @@ class PenyewaanController extends Controller
 			->where('status_acc','proses-sewa')->pluck('total')->first();
 
 			if(($jumlah_proses + $request->jumlah) <= ((int) $jumlah_barang - (int) $barang_disewa)){
-			$penyewaanData = [
+			
+                $penyewaanData = [
 				'id_user' => $user_id,
 				'id_barang' => $id_barang,
 				'jumlah' => $request->jumlah,
